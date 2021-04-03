@@ -1,20 +1,88 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Aula 03 - Binding
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h1> Hoje é aniversario do(a) {{aniversariante.nome}}</h1>
+  <p>Ele(a) esta fazendo {{aniversariante.idade}} anos</p>
+  <p>parabéns {{aniversariante.nome}} 🎉🎉🎉🎉🎉</p>
+  <p>O(a) {{aniversariante.nome}} é {{aniversariante.idade >= 18 ? 'maior' : 'menor'}} de idade </p>
+  
+  <ion-button (click)="aniversario()">
+    Fazer Aniversario
+  </ion-button>
+
+  <p>progresso concluido para os seus 21 anos:</p>
+  <ion-progress-bar color="primary" [value]="aniversariante.idade / 100"></ion-progress-bar>
+
+  <ion-input placeholder="digite a idade" type="number" [(ngModel)]="aniversariante.idade"></ion-input>
+
+  <ion-text [color]= "aniversariante.idade >=18 ? 'success' : 'danger'">
+    <p>O(a) {{aniversariante.nome}} é {{aniversariante.idade >= 18 ? 'maior' : 'menor'}} de idade </p>
+  </ion-text>
+
+  <ion-item>
+    <ion-label position="floating">Digite a Idade </ion-label>
+    <ion-input [(ngModel)]="idade" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item> 
+    <ion-label position="floating">Descrição</ion-label>
+    <ion-textarea [(ngModel)]="descricao" autoGrow></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Jon Snow</ion-label>
+    <ion-checkbox [(ngModel)]="personagem.jonSnow" slot="start"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Arya Stark</ion-label>
+    <ion-checkbox [(ngModel)]="personagem.aryaStark"slot="start"></ion-checkbox>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Aceito os Termos</ion-label>
+      <ion-toggle [(ngModel)]="termos"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <p class="ion-text-left">Metodo de Pagamento:</p>
+  <ion-radio-group [(ngModel)]="metodoDePagamento">
+    <ion-item>
+      <ion-label>Dinheiro</ion-label>
+      <ion-radio slot="start" value="dinheiro"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Credito</ion-label>
+      <ion-radio slot="start" value="credito"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Debito</ion-label>
+      <ion-radio slot="start" value="debito"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>Ano de Nacimento</ion-label>
+    <ion-select placeholder="Selecione o ano:"  [(ngModel)]="dataDeNascimento">
+      <ion-select-option value=2000>2000</ion-select-option>
+      <ion-select-option value=2001>2001</ion-select-option>
+      <ion-select-option value=2002>2002</ion-select-option>
+      <ion-select-option value=2003>2003</ion-select-option>
+      <ion-select-option value=2004>2004</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <pre>{{aniversariante | json}} {{personagem | json}}</pre>
+  <pre>{{descricao | json}} {{idade | json}} 
+       {{termos | json}} {{dataDeNascimento | json}}
+      {{metodoDePagamento | json}}</pre>
+ 
 </ion-content>
+ 

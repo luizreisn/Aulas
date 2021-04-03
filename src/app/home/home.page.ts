@@ -7,6 +7,24 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public aniversariante ={
+    nome: "Luiz Gabriel",
+    idade: 15,
+    
+  }
+  public personagem ={
+    jonSnow: false,
+    aryaStark: false
+  }
 
+  public idade = null;
+  public descricao = "";
+  public termos = false;
+  public metodoDePagamento = "";
+  public dataDeNascimento = null;
+
+  constructor() {}
+  public aniversario(){
+    this.aniversariante.idade++;
+  }
 }
