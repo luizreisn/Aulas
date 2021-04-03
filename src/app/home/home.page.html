@@ -34,11 +34,14 @@
   <ion-button (click)="incrementa()">
     <ion-icon name="add"></ion-icon>
   </ion-button>
+  <ion-button (click)="decrementa()">
+    <ion-icon name="remove-outline"></ion-icon>
+  </ion-button>
 
   <ion-list *ngIf="provas.length; else vazio">
     <ion-item *ngFor = "let prova of provas">
       <ion-label>
-        <h2>{{prova.nome}}</h2>
+        <h2>{{prova.nome | lowercase}}</h2>
         <p>{{prova.nota}}</p>
       </ion-label>
     </ion-item>
@@ -53,21 +56,46 @@
   <ion-list>
     <ion-item *ngFor="let entrega of entregas">
       <ion-label>
-        <h2>{{entrega.nome}}</h2>
+        <h2>{{entrega.nome | uppercase}}</h2>
         <div [ngSwitch]="entrega.status">
-          <p *ngSwitchCase="'preparing'">Preparando Pedido</p>
-          <p *ngSwitchCase="'onRoute'">Pedido a Caminho</p>
-          <p *ngSwitchCase="'delivered'">Pedido Entregue</p>
-          <p *ngSwitchCase="'finished'">Pedido Finalizado</p>
+          <p *ngSwitchCase="'preparando'">Preparando Pedido</p>
+          <p *ngSwitchCase="'emRota'">Pedido a Caminho</p>
+          <p *ngSwitchCase="'entregue'">Pedido Entregue</p>
+          <p *ngSwitchCase="'finalizado'">Pedido Finalizado</p>
           <p *ngSwitchDefault>O que aconteceu??</p>
         </div>
       </ion-label>
-        <ion-icon  *ngIf="entrega.diasDesdeACompra > entrega.diasEstimadosEntrega; else naoAtrasado" slot="end" name="time-outline" color="warning"></ion-icon>
-        <ng-template #naoAtrasado>
-          <ion-icon slot="end" name="bicycle-outline" color="success"></ion-icon>
+
+        <ng-container *ngIf="entrega.status != 'finalizado'; else finalizado">
+          <ion-icon  *ngIf="entrega.diasDesdeACompra > entrega.diasEstimadosEntrega; else naoAtrasado" slot="end" name="time-outline" 
+                      [color]="entrega.diasDesdeACompra - entrega.diasEstimadosEntrega > 1 ? 'danger' : 'warning'"></ion-icon> <!--se o produto tiver atrasado 1 dia fica amarelo se tiver mais fica vermelho-->
+          <ng-template #naoAtrasado>
+            <ion-icon slot="end" name="bicycle-outline" color="success"></ion-icon>
+          </ng-template>
+        </ng-container>
+
+        <ng-template #finalizado>
+          <ion-icon slot="end" name="checkmark-circle-outline" color="success"></ion-icon>
         </ng-template>
     </ion-item>
   </ion-list>
+
+  <h1>Numero: {{valor | number}}</h1>
+  <h1>Pi (3.1-5): {{valor | number: '3.1-5'}}</h1>
+  <h1>Porcentagem: {{valor | percent}}</h1>
+  <h1>Dinheiro: {{valor | currency}}</h1>
+  <h1>Em real: {{valor | currency: 'BRL'}}</h1>
+
+  <p>{{hoje}}</p>
+  <p>{{hoje | date}}</p>
+  <P>{{hoje | date: 'short'}}</P>
+  <P>{{hoje | date: 'medium'}}</P>
+  <P>{{hoje | date: 'long'}}</P>
+  <P>{{hoje | date: 'full'}}</P>
+  <P>{{hoje | date: 'shortDate'}}</P>
+  <P>{{hoje | date: 'h: mm a z'}}</P>
+
+  <!-- Disponivel na documentação do Angular-->
   
 
 

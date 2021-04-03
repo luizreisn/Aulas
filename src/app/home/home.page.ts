@@ -21,34 +21,45 @@ export class HomePage {
     ];
 
   constructor() {}
+    public valor = 3.14159265359;
+    public hoje = new Date();
+
     public incrementa(){
       this.estudante.nota ++;
+    }
+    public decrementa(){
+      this.estudante.nota --;
     }
 
     public entregas=[
       {nome: 'TV', 
-       diasDesdeACompra: 7, 
+       diasDesdeACompra: 9, 
        diasEstimadosEntrega: 8, 
-       status: 'onRoute'},
+       status: 'emRota'},
 
       {nome: 'Nintendo Switch', 
        diasDesdeACompra: 15,
        diasEstimadosEntrega: 15,
-       status: 'delivered'},
+       status: 'entregue'},
 
       {nome: 'JBL', 
        diasDesdeACompra: 6,
        diasEstimadosEntrega: 4,
-       status: 'onRoute'},
+       status: 'emRota'},
 
       {nome: 'Máquina de Lavar',
        diasDesdeACompra: 2,
        diasEstimadosEntrega: 15,
-       status: 'preparing'},
+       status: 'preparando'},
        
       {nome: 'MousePad',
        diasDesdeACompra: 4,
        diasEstimadosEntrega: 2,
-       status: 'onRoute'}
+       status: 'emRota'},
+
+      {nome: 'iPhone',
+       diasDesdeACompra: 5,
+       diasEstimadosEntrega: 5,
+       status: 'finalizado'}
     ]
 }
