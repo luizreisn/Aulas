@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+<ion-header> 
+  <ion-toolbar color="secondary"> 
+    <ion-title> 
+      Perfil de Motorista
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content> 
+  <ion-searchbar placeholder="Buscar Motorista"></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-row class="ion-align-items-center">
+          <ion-col size="auto" class="ion-margin-end">
+            <ion-avatar>
+              <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="">
+            </ion-avatar>
+          </ion-col>
+          <ion-col>
+            <ion-card-title>
+              Luiz Gabriel 
+              <ion-badge color="secondary">
+                4.9 
+                <ion-icon name="star"></ion-icon> 
+              </ion-badge>
+            </ion-card-title>
+            <ion-card-subtitle>
+              Motorista desde 2015
+            </ion-card-subtitle>
+          </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content >
+      <ion-text>
+        <p>
+          Motorista desde 2015, Luiz tem uma ótima classificação, viagens bem avaliadas, rapidas e seguras. 
+          Nossos clientes avaliam nossos motoristas e nossa equipe garante que seja uma classificação justa.
+        </p> 
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
