@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Blank
@@ -6,15 +6,72 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h1>{{estudante.nome}} sua nota é 
+    <ion-text *ngIf="estudante.nota >= 6.0; else notaVermelha" color="success">{{estudante.nota}}</ion-text>
+    <ng-template #notaVermelha>
+      <ion-text color="danger">{{estudante.nota}}</ion-text>
+    </ng-template>
+  </h1>
+
+  <ion-card *ngIf="estudante.nota >= 6.0; else reprovado" color="success" class="ion-padding">
+    <h2 class="ion-text-center">
+      <ion-icon name="thumbs-up-outline"></ion-icon>
+      Você foi aprovado
+    </h2>
+  </ion-card >
+
+  <ng-template #reprovado>
+    <ion-card color="danger" class="ion-padding">
+      <h2 class="ion-text-center">
+        <ion-icon name="warning"></ion-icon>
+        Você foi reprovado
+      </h2>
+    </ion-card>
+  </ng-template>
+
+  <ion-button (click)="incrementa()">
+    <ion-icon name="add"></ion-icon>
+  </ion-button>
+
+  <ion-list *ngIf="provas.length; else vazio">
+    <ion-item *ngFor = "let prova of provas">
+      <ion-label>
+        <h2>{{prova.nome}}</h2>
+        <p>{{prova.nota}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #vazio>
+    <p>AINDA NÃO FORAM FEITAS PROVAS</p>
+  </ng-template>
+
+  <h1><br>Serviço de Entrega</h1>
+
+  <ion-list>
+    <ion-item *ngFor="let entrega of entregas">
+      <ion-label>
+        <h2>{{entrega.nome}}</h2>
+        <div [ngSwitch]="entrega.status">
+          <p *ngSwitchCase="'preparing'">Preparando Pedido</p>
+          <p *ngSwitchCase="'onRoute'">Pedido a Caminho</p>
+          <p *ngSwitchCase="'delivered'">Pedido Entregue</p>
+          <p *ngSwitchCase="'finished'">Pedido Finalizado</p>
+          <p *ngSwitchDefault>O que aconteceu??</p>
+        </div>
+      </ion-label>
+        <ion-icon  *ngIf="entrega.diasDesdeACompra > entrega.diasEstimadosEntrega; else naoAtrasado" slot="end" name="time-outline" color="warning"></ion-icon>
+        <ng-template #naoAtrasado>
+          <ion-icon slot="end" name="bicycle-outline" color="success"></ion-icon>
+        </ng-template>
+    </ion-item>
+  </ion-list>
+  
+
+
+
+
+
 </ion-content>
