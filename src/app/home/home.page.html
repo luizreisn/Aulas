@@ -1,20 +1,214 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+<ion-header>
+  <ion-toolbar color="secondary" >
+    <ion-title class="ion-text-start" style="padding: 5%;" >
+      Travel Guide
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" color="light">
+  <h1>
+    Hi Mike, <br> Where do you want to go?
+  </h1>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-searchbar placeholder="Input Destination" searchIcon="location"></ion-searchbar>
+  
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto">
+      <h2 class="ion-no-margin">Daily Scenery</h2>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-text color="secondary" style="font-size: 10pt;">
+        Updated
+      </ion-text>
+    </ion-col>
+    <ion-col size="auto" style="margin-left: auto;">
+      <ion-button fill="clear" color="medium" style="font-size: 10pt;">
+        more
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-card class="ion-no-margin">
+    <img class="daily-scenery-cover-image" src="https://images.pexels.com/photos/97906/pexels-photo-97906.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+    <ion-card-header style="padding: 6px;">
+      <ion-row>
+        <ion-col size="auto">
+          <ion-card-subtitle color="medium">
+            30/03/2021
+          </ion-card-subtitle>
+          <ion-card-title style="font-size: 13pt;" >
+            São Paulo, Brazil
+          </ion-card-title>
+        </ion-col>
+        <ion-col size="auto" class="ml-auto" >
+          <ion-avatar>
+            <img class="daily-scenery-avatar" src="https://randomuser.me/api/portraits/men/62.jpg" alt="">
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="auto" class="ml-auto" class="ion-no-margin">
+          <ion-avatar>
+            <img class="daily-scenery-avatar" src="https://randomuser.me/api/portraits/women/62.jpg" alt="">
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto">
+      <h2 class="ion-no-margin">City</h2>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-badge color="secondary" style="font-size: 10pt;">
+        hot
+      </ion-badge>
+    </ion-col>
+    <ion-col size="auto" class="ml-auto" >
+      <ion-button fill="clear" color="medium" style="font-size: 10pt;">
+        more
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-card class="ion-no-margin">
+        <img src="https://images.pexels.com/photos/2048865/pexels-photo-2048865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        <ion-card-header>
+          <ion-card-title style="font-size: 11pt;">
+            Turkey
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card class="ion-no-margin">
+        <img src="https://images.pexels.com/photos/756688/pexels-photo-756688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        <ion-card-header>
+          <ion-card-title style="font-size: 11pt;">
+            Germany
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="4">
+      <ion-card class="ion-no-margin">
+        <img src="https://images.pexels.com/photos/59601/pexels-photo-59601.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        <ion-card-header>
+          <ion-card-title style="font-size: 11pt;">
+            Poland
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto">
+      <h2>Master</h2>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto" class="ion-no-padding">
+      <ion-avatar>
+        <img class="master-avatar" src="https://randomuser.me/api/portraits/women/40.jpg" alt="">
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="auto" class="ion-no-padding">
+      <ion-avatar>
+        <img class="master-avatar" src="https://randomuser.me/api/portraits/women/41.jpg" alt="">
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="auto" class="ion-no-padding">
+      <ion-avatar>
+        <img class="master-avatar" src="https://randomuser.me/api/portraits/women/42.jpg" alt="">
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="auto" class="ion-no-padding">
+      <ion-avatar>
+        <img class="master-avatar" src="https://randomuser.me/api/portraits/women/43.jpg" alt="">
+      </ion-avatar>
+    </ion-col>
+    <ion-col  size="auto">
+      <ion-button fill="clear" size="small" color="secondary" style="font-size: 13pt;">
+        Join Them
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-toolbar style="padding: 5%;" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center" style="padding-bottom: 0%;">Standard</ion-title>
+    
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+      <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+  
+  
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Custom Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-menu side="end" type="push" contentId="main">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>End Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+
 </ion-content>
