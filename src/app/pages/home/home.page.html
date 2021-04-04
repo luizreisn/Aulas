@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-button class="botao" size="large">
+        <ion-icon size="large" name="menu-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="botao2">
+        <ion-icon size="large"name="cart-outline"></ion-icon>
+      </ion-button>
+      <div class="img">
+        <img src="/assets/img/Logo.png" alt="">
+      </div>
+      <div>
+        <ion-searchbar placeholder="Buscar Produto"></ion-searchbar>
+      </div>
+      
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card color="primary" class="ion-text-center card">
+    <ion-card-subtitle>Entregar em:</ion-card-subtitle>
+    <ion-card-title>{{endereco.endereco}} {{endereco.numero}}</ion-card-title>
+    <ion-button>
+      <ion-text style="text-decoration-line: underline;">Trocar</ion-text>
+    </ion-button>
+  </ion-card>
+
+  <ion-card color="warning" class="ion-text-center cardPromocao">
+    <ion-text>oi</ion-text>
+  </ion-card>
+
+  <ion-row >
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Lanches
+        </ion-text>
+      </ion-card>
+    </ion-col >
+
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Comidas
+        </ion-text>
+      </ion-card>
+    </ion-col >
+
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Bebidas
+        </ion-text>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Sobremesas
+        </ion-text>
+      </ion-card>
+    </ion-col >
+    
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Novidades
+        </ion-text>
+      </ion-card>
+    </ion-col >
+    
+    <ion-col size="4" class="ion-no-padding">
+      <ion-card color="success" class="card2 ion-text-center">
+        <ion-text>
+          Promoções
+        </ion-text>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <p><br></p>
+
+</ion-content>
+

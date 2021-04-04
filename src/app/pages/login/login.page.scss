@@ -1,0 +1,84 @@
+.redes{
+    position: absolute;
+    top: 125%;
+    
+}
+
+.texto{
+    position: absolute;
+    left: auto;
+    right: auto;
+    width: 80%;
+    text-align: center;
+    top: 110%;
+    color: var(--ion-color-primary);
+}
+
+.segment{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 80%;
+    margin: 0 auto;
+    top: 47%;
+    background-color: #7d2ea78f;
+    border-radius: 10px;
+    
+}
+
+ion-slides {
+    top: 53%;
+
+    .slider{
+        width: 80%;
+        color: white;
+        background-color: #7d2ea78f;
+        border-radius: 10px;
+
+        ion-item{
+            --background: rgba(255, 255, 255, 0.226);
+            --border-radius: 10px;
+            ion-input{
+                --color: white;
+            }
+            ion-textarea{
+                --color: white;
+            }
+            ion-label{
+                --color: white;
+            }
+            ion-datetime{
+                --placeholder-color: white;
+            }
+        }
+    }
+}
+
+.fundoRoxo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background-color: #8930c0;
+
+    .imagem {
+        position: absolute;
+        top: -100px;
+        left: -68px;
+        right: -10px;
+        height:150%;
+        background-image: url('/assets/img/Fundo Login.png');
+        background-size: 110%;
+    }
+
+    .textoBV {
+        position: absolute;
+        bottom: 70%;
+        left: 28%;
+        font-weight: bold;
+        font-size: 10pt;
+        color: white;
+        
+        
+    }
+}
