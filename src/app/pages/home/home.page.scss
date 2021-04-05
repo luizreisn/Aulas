@@ -1,20 +1,19 @@
-.img{
-    width:20%;
-    height: 20%;
+
+.imgLogo{
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 3%;
-    padding-top: 3%;
+    padding-top: 5px;
 }
 
-.botao{
+.botaoMenuTopo{
     position:absolute;
     width: 25%;
     height: 50%;
     padding-top: 10%;
-    margin-left: auto;
+    margin-left: 3%;
 }
-.botao2{
+.botaoCarrinho{
     position: absolute;
     width: 25%;
     height: 50%;
@@ -22,20 +21,51 @@
     margin-left: 72%;
 }
 
-.card{
+ion-menu-button{
+    font-size: 55px;
+}
+
+ion-icon {
+    font-size: 55px;
+}
+
+.customizarMenu{
+    ion-list{
+        background-color: #7c2ea7;
+        ion-button{
+            height: 56px;
+            width: 304px;
+            ion-item{
+                margin-right:auto;
+            }
+        }
+    }
+}
+
+.cardEndereco{
     padding-top: 3%;
 }
 
-.cardPromocao{
-    padding-top: 3%;
+.botaoPromocao{
+    width: 343px;
     height: 200px;
 }
 
-.card2{
-    height: 93px;
+.imgBotaoPromocao{
+    height: 250px;
+    width: auto;
 }
 
+.botaoMenu{
+    height: 93px;
+    width: 93px;
+}
+
+.imgBotaoMenu{
+    height: 50px;
+    width: auto;
+}
 
 ion-toolbar{
-    padding-top: 5%;
+    padding-top: 50%;
 }

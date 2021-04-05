@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
   async carregar() {
     const loading = await this.carregando.create({
       message: 'Por favor aguarde ...',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
     this.rota.navigate(["home"]);

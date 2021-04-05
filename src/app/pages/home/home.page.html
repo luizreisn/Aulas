@@ -1,23 +1,85 @@
 <ion-header>
     <ion-toolbar color="primary">
-      <ion-button class="botao" size="large">
-        <ion-icon size="large" name="menu-outline"></ion-icon>
+      <ion-buttons class="botaoMenuTopo">
+        <ion-menu-button auto-hide="true"></ion-menu-button>
+      </ion-buttons>
+      <ion-button class="botaoCarrinho">
+        <ion-icon name="cart-outline"></ion-icon>
       </ion-button>
-      <ion-button class="botao2">
-        <ion-icon size="large"name="cart-outline"></ion-icon>
-      </ion-button>
-      <div class="img">
+      <div class="imgLogo">
         <img src="/assets/img/Logo.png" alt="">
       </div>
-      <div>
-        <ion-searchbar placeholder="Buscar Produto"></ion-searchbar>
-      </div>
-      
+      <ion-searchbar placeholder="Buscar Produto" [(ngModel)]="pesquisa"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
 
+  <ion-menu side="start" menuId="custom" content-id="main" class="customizarMenu">
+    <ion-content color="primary">
+      <ion-list >
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Nome</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="bicycle-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Pedidos em Andamento</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Pedidos Anteriores</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="heart" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Favoritos</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="wallet-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Cupons</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Formas de Pagamento</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button>
+          <ion-item color="primary">
+            <ion-icon name="chatbox-ellipses-outline" slot=start></ion-icon>
+            <ion-label style="font-size: medium;">Chats</ion-label>
+          </ion-item>
+        </ion-button>
+
+        <ion-button (click)="sair()">
+          <ion-item color="primary">
+            <ion-icon name="exit-outline" slot="start"></ion-icon>
+            <ion-label style="font-size: medium;">Sair</ion-label>
+          </ion-item>
+        </ion-button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet id="main"></ion-router-outlet>
+
 <ion-content>
-  <ion-card color="primary" class="ion-text-center card">
+  <ion-card color="primary" class="ion-text-center cardEndereco">
     <ion-card-subtitle>Entregar em:</ion-card-subtitle>
     <ion-card-title>{{endereco.endereco}} {{endereco.numero}}</ion-card-title>
     <ion-button>
@@ -25,63 +87,71 @@
     </ion-button>
   </ion-card>
 
-  <ion-card color="warning" class="ion-text-center cardPromocao">
-    <ion-text>oi</ion-text>
-  </ion-card>
+  <ion-button color="warning" class="ion-text-center ion-margin botaoPromocao">
+    <img class="imgBotaoPromocao" src="/assets/img/PromocoesTexto.png" alt="">
+  </ion-button>
 
   <ion-row >
-    <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Lanches
-        </ion-text>
-      </ion-card>
-    </ion-col >
 
     <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Comidas
-        </ion-text>
-      </ion-card>
-    </ion-col >
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/lanches.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Lanches</ion-text>
+      </div>
+    </ion-col>
 
     <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Bebidas
-        </ion-text>
-      </ion-card>
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/comidas.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Comidas</ion-text>
+      </div>
+    </ion-col>
+
+    <ion-col size="4" class="ion-no-padding">
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/bebidas.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Bebidas</ion-text>
+      </div>
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Sobremesas
-        </ion-text>
-      </ion-card>
-    </ion-col >
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/sobremesas.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Sobremesas</ion-text>
+      </div>
+    </ion-col>
     
     <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Novidades
-        </ion-text>
-      </ion-card>
-    </ion-col >
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/novidades.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Novidades</ion-text>
+      </div>
+    </ion-col>
     
     <ion-col size="4" class="ion-no-padding">
-      <ion-card color="success" class="card2 ion-text-center">
-        <ion-text>
-          Promoções
-        </ion-text>
-      </ion-card>
+      <ion-button color="success" class="ion-margin botaoMenu">
+        <img class="imgBotaoMenu" src="/assets/img/promocoes.png" alt="">
+      </ion-button>
+      <div class="ion-text-center">
+        <ion-text color="primary">Promoções</ion-text>
+      </div>
     </ion-col>
   </ion-row>
 
   <p><br></p>
+  <p>{{pesquisa}}</p>
 
 </ion-content>
 
