@@ -4,13 +4,12 @@ import { IonSlides } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import {Router} from '@angular/router'
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides;
 
@@ -22,7 +21,6 @@ export class LoginPage implements OnInit {
     email: "",
     senha: null
   }
-  public recuperacaoSenha = "";
   
   constructor(public carregando: LoadingController,
               public alerta: AlertController,
@@ -40,27 +38,9 @@ export class LoginPage implements OnInit {
     
   }
 
-  public cadastrar(){
-    console.log('nome: ' ,this.usuario.nome);
-    console.log('telefone: ' ,this.usuario.telefone);
-    console.log('data de nascimento: ' ,this.usuario.nascimento);
-    console.log('sexo: ' ,this.usuario.sexo);
-    console.log('e-mail: ' ,this.usuario.email);
-    console.log('senha: ' ,this.usuario.senha);
-  }
-
   public login(){
     console.log('email: ' ,this.usuario.email);
     console.log('senha: ' ,this.usuario.senha);
-  }
-
-  async carregar() {
-    const loading = await this.carregando.create({
-      message: 'Por favor aguarde ...',
-      duration: 1000
-    });
-    await loading.present();
-    this.rota.navigate(["home"]);
   }
 
   async alertaSenha() {
@@ -82,13 +62,31 @@ export class LoginPage implements OnInit {
         },{
           text: 'Confirmar',
           handler: (alertData) => {
-            console.log('Confirm Ok', alertData.email);
+            console.log('email:', alertData.email);
           }
         }
       ]
     });
 
     await alert.present();
+  }
+
+  public cadastrar(){
+    console.log('nome: ' ,this.usuario.nome);
+    console.log('telefone: ' ,this.usuario.telefone);
+    console.log('data de nascimento: ' ,this.usuario.nascimento);
+    console.log('sexo: ' ,this.usuario.sexo);
+    console.log('e-mail: ' ,this.usuario.email);
+    console.log('senha: ' ,this.usuario.senha);
+  }
+
+  async carregar() {
+    const loading = await this.carregando.create({
+      message: 'Por favor aguarde ...',
+      duration: 1000
+    });
+    await loading.present();
+    this.rota.navigate(["home"]);
   }
 
 }

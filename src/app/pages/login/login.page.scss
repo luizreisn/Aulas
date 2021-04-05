@@ -1,17 +1,28 @@
-.redes{
+.fundoRoxo {
     position: absolute;
-    top: 125%;
-    
+    left: 0;
+    right: 0;
+    height: 40%;
+    background-color: #8930c0;
 }
 
-.texto{
+.imagem {
     position: absolute;
-    left: auto;
-    right: auto;
-    width: 80%;
-    text-align: center;
-    top: 110%;
-    color: var(--ion-color-primary);
+    top: -100px;
+    left: -68px;
+    right: -10px;
+    height:150%;
+    background-image: url('/assets/img/Fundo Login.png');
+    background-size: 110%;
+}
+
+.textoBemVindo {
+    position: absolute;
+    bottom: 70%;
+    left: 28%;
+    font-weight: bold;
+    font-size: 10pt;
+    color: white;    
 }
 
 .segment{
@@ -24,6 +35,21 @@
     background-color: #7d2ea78f;
     border-radius: 10px;
     
+}
+
+.redes{
+    position: absolute;
+    top: 125%;
+}
+
+.textoDescricao{
+    position: absolute;
+    left: auto;
+    right: auto;
+    width: 80%;
+    text-align: center;
+    top: 110%;
+    color: var(--ion-color-primary);
 }
 
 ion-slides {
@@ -49,36 +75,9 @@ ion-slides {
             }
             ion-datetime{
                 --placeholder-color: white;
+                
             }
         }
     }
 }
 
-.fundoRoxo {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background-color: #8930c0;
-
-    .imagem {
-        position: absolute;
-        top: -100px;
-        left: -68px;
-        right: -10px;
-        height:150%;
-        background-image: url('/assets/img/Fundo Login.png');
-        background-size: 110%;
-    }
-
-    .textoBV {
-        position: absolute;
-        bottom: 70%;
-        left: 28%;
-        font-weight: bold;
-        font-size: 10pt;
-        color: white;
-        
-        
-    }
-}
