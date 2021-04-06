@@ -21,6 +21,10 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+  public busca(){
+    this.rota.navigate(["busca"])
+  }
+
   public trocarEndereco(){
     console.log('Endereco', this.endereco.endereco)
     console.log('numero:', this.endereco.numero)

@@ -9,7 +9,10 @@
       <div class="imgLogo">
         <img src="/assets/img/Logo.png" alt="">
       </div>
-      <ion-searchbar placeholder="Buscar Produto" [(ngModel)]="pesquisa" ></ion-searchbar>
+        <ion-button class="botaoPesquisa ion-no-padding" color="tertiary" (click)="busca()">
+          <ion-icon slot="start"name="search-outline"></ion-icon>
+          <h1>Buscar Produto</h1>
+        </ion-button>
     </ion-toolbar>
   </ion-header>
 

@@ -26,7 +26,6 @@ export class LanchesPage implements OnInit {
 
   constructor(public rota: Router) { }
 
-
   ngOnInit() {
   }
 

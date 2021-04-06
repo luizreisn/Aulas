@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'lanches',
     loadChildren: () => import('./pages/lanches/lanches.module').then( m => m.LanchesPageModule)
   },
+  {
+    path: 'busca',
+    loadChildren: () => import('./pages/busca/busca.module').then( m => m.BuscaPageModule)
+  },
 ];
 
 @NgModule({

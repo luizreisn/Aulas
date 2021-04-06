@@ -24,6 +24,12 @@
     }
 }
 
+.textoLanches{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-bottom: 50px;
+}
+
 h1{
     color: #7c2ea7;
     font-weight: bold;
@@ -57,6 +63,7 @@ ion-item{
         margin-top: 0%;
     }
     .botaoProduto{
+        width: 64px;
         margin-bottom: 0%;
     }
 }
