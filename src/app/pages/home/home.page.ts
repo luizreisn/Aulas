@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router'
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,13 +15,46 @@ export class HomePage implements OnInit {
   }
   public pesquisa = "";
 
-  constructor(public rota: Router) { }
+  constructor(public rota: Router,
+              public alerta: AlertController) { }
 
   ngOnInit() {
   }
 
-  public sair(){
-    this.rota.navigate(["login"]);
+  public trocarEndereco(){
+    console.log('Endereco', this.endereco.endereco)
+    console.log('numero:', this.endereco.numero)
+    this.rota.navigate(["trocar-endereco"])
+  }
+
+  public perfil(){
+    this.rota.navigate(["perfil"])
+  }
+
+  public lanches(){
+    this.rota.navigate(["lanches"])
+  }
+
+  async sair() {
+    const alert = await this.alerta.create({
+      header: 'Deseja mesmo sair?',
+      buttons: [{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        },{
+          text: 'Sair',
+          handler: (alertData) => {
+            console.log('Confirm OK');
+            this.rota.navigate(["login"]);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

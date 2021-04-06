@@ -16,7 +16,8 @@ export class LoginPage implements OnInit {
   public usuario={
     nome: "",
     telefone: null,
-    nascimento: Date,
+    cpf: null,
+    nascimento: null,
     sexo: "",
     email: "",
     senha: null
@@ -74,6 +75,7 @@ export class LoginPage implements OnInit {
   public cadastrar(){
     console.log('nome: ' ,this.usuario.nome);
     console.log('telefone: ' ,this.usuario.telefone);
+    console.log('CPF: ' ,this.usuario.cpf);
     console.log('data de nascimento: ' ,this.usuario.nascimento);
     console.log('sexo: ' ,this.usuario.sexo);
     console.log('e-mail: ' ,this.usuario.email);

@@ -1,0 +1,53 @@
+.botaoVoltar{
+    position:absolute;
+    padding-top: 13%;
+    ion-back-button{
+        font-size: 20px;
+    }
+}
+
+.imgLogo{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+.textoPerfil{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-bottom: 50px;
+}
+
+.card{
+    background-color: #7d2ea78f;
+    .botaoAtualiza{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 323px;
+    }
+    ion-item{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 323px;
+        color: #7d2ea78f;
+        border-radius: 10px;
+        .botaoPerfil{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 70px;
+            width: 323px;
+            ion-icon{
+                font-size: 70px;
+            }
+        }
+        
+        
+    }
+}

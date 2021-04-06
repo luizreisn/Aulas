@@ -15,6 +15,18 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'trocar-endereco',
+    loadChildren: () => import('./pages/trocar-endereco/trocar-endereco.module').then( m => m.TrocarEnderecoPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'lanches',
+    loadChildren: () => import('./pages/lanches/lanches.module').then( m => m.LanchesPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,63 @@
+.imgLogo{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+.botaoVoltar{
+    position:absolute;
+    padding-top: 13%;
+    ion-back-button{
+        font-size: 20px;
+    }
+}
+
+.botaoCarrinho{
+    position: absolute;
+    width: 25%;
+    height: 50%;
+    padding-top: 10%;
+    margin-left: 72%;
+    ion-icon {
+        font-size: 55px;
+    }
+}
+
+h1{
+    color: #7c2ea7;
+    font-weight: bold;
+    text-align:center ;
+    margin-bottom: 5%;
+}
+
+ion-item{
+    ion-row{
+        margin-bottom: 3%;
+        margin-top: 3%;
+    }
+    ion-card{
+        height: 83px;
+        width: 83px;
+        background-color: greenyellow;
+    }
+    .nome{
+        color: #7c2ea7;
+        font-size: 13pt;
+        font-weight: bold;
+        margin: 0%;
+    }
+    .descricao{
+        font-size: 10pt;
+        margin: 0%;
+    }
+    .valor{
+        color: #7c2ea7;
+        font-weight: bold;
+        margin-top: 0%;
+    }
+    .botaoProduto{
+        margin-bottom: 0%;
+    }
+}
+

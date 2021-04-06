@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons class="botaoVoltar">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <div class="imgLogo">
+      <img src="/assets/img/Logo.png" alt="">
+    </div>
+    <div class="ion-text-center">
+      <ion-text class="textoEndereco">Adicione seu Endereço</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card">
+    <ion-item lines="none">
+      <ion-input type="number" placeholder="CEP" [(ngModel)]="enderecoTroca.cep"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Endereço" [(ngModel)]="enderecoTroca.endereco"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="number" placeholder="Numero" [(ngModel)]="enderecoTroca.numero"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-textarea placeholder="Complemento" [(ngModel)]="enderecoTroca.complemento"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" (click)="confirmar()">Confirmar Endereço</ion-button>
+  </ion-card>
+</ion-content>

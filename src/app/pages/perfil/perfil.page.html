@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons class="botaoVoltar">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <div class="imgLogo">
+      <img src="/assets/img/Logo.png" alt="">
+    </div>
+    <div class="ion-text-center">
+      <ion-text class="textoPerfil">Perfil</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card" color="primary">
+    <ion-item lines="none" color="primary">
+      <ion-button class="botaoPerfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-input type="text" placeholder="Nome Completo" [(ngModel)]="perfil.nome"></ion-input>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-input type="number" placeholder="CPF" [(ngModel)]="perfil.cpf"></ion-input>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-input type="number" placeholder="Celular" [(ngModel)]="perfil.celular"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Sexo</ion-label>
+      <ion-select interface="popover" style="padding-left: 0;" [(ngModel)]="perfil.sexo" >
+        <ion-select-option value="feminino">Feminino</ion-select-option>
+        <ion-select-option value="masculino">Masculino</ion-select-option>
+        <ion-select-option value="naoDizer">Prefiro Não Dizer</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Nascimento</ion-label>
+      <ion-datetime value="2021-04-19" placeholder="Data de Nacimento" [(ngModel)]="perfil.nascimento"></ion-datetime>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-input type="text" placeholder="Atualizar E-Mail" [(ngModel)]="perfil.email"></ion-input>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-input type="password" placeholder="Atualizar Senha" [(ngModel)]="perfil.senha"></ion-input>
+    </ion-item>
+    <ion-button expand="block" class="botaoAtualiza" (click)="atualizarPerfil()">Atualizar Dados</ion-button>
+  </ion-card>
+</ion-content>

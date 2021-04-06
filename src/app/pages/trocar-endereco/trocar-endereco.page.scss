@@ -1,0 +1,40 @@
+.botaoVoltar{
+    position:absolute;
+    padding-top: 13%;
+    ion-back-button{
+        font-size: 20px;
+    }
+}
+
+.imgLogo{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+.textoEndereco{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-bottom: 50px;
+}
+
+.card{
+    background-color: #7d2ea78f ;
+    ion-item{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 323px;
+        color: #7d2ea78f;
+        border-radius: 10px;
+    }
+    ion-button{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 323px;
+    }
+}
