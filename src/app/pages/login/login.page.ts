@@ -11,6 +11,7 @@ import {Router} from '@angular/router'
 })
 
 export class LoginPage implements OnInit {
+
   @ViewChild(IonSlides) slides: IonSlides;
 
   public usuario={
@@ -24,7 +25,7 @@ export class LoginPage implements OnInit {
   }
   
   constructor(public carregando: LoadingController,
-              public alerta: AlertController,
+              private alerta: AlertController,
               public rota: Router) { }
 
   ngOnInit() {
@@ -44,7 +45,7 @@ export class LoginPage implements OnInit {
     console.log('senha: ' ,this.usuario.senha);
   }
 
-  async alertaSenha() {
+  public async alertaSenha() {
     const alert = await this.alerta.create({
       header: 'Digite o E-mail cadastrado',
       subHeader: 'Enviaremos um E-mail para redefinir sua senha.',
@@ -52,8 +53,7 @@ export class LoginPage implements OnInit {
           name: 'email',
           type: 'email',
           placeholder : 'Digite seu E-mail'
-        }
-      ],
+        }],
       buttons: [{
           text: 'Cancel',
           role: 'cancel',
@@ -65,8 +65,7 @@ export class LoginPage implements OnInit {
           handler: (alertData) => {
             console.log('email:', alertData.email);
           }
-        }
-      ]
+        }]
     });
 
     await alert.present();

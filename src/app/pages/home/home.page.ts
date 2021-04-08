@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
     numero: null
   }
   public pesquisa = "";
+  public focar= null;  
 
   constructor(public rota: Router,
               public alerta: AlertController) { }
@@ -25,21 +26,16 @@ export class HomePage implements OnInit {
     this.rota.navigate(["busca"])
   }
 
-  public trocarEndereco(){
-    console.log('Endereco', this.endereco.endereco)
-    console.log('numero:', this.endereco.numero)
-    this.rota.navigate(["trocar-endereco"])
+  public focado(){
+    console.log(this.focar)
+    this.focar = 1;
+  }
+  public desfocado(){
+    console.log(this.focar)
+    this.focar = 0;
   }
 
-  public perfil(){
-    this.rota.navigate(["perfil"])
-  }
-
-  public lanches(){
-    this.rota.navigate(["lanches"])
-  }
-
-  async sair() {
+  public async sair() {
     const alert = await this.alerta.create({
       header: 'Deseja mesmo sair?',
       buttons: [{

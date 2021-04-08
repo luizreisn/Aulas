@@ -12,15 +12,18 @@ export class LanchesPage implements OnInit {
   public produtosCarne=[
     {nome:"X-Radiação",
      descricao:"Hamburguer diretamente de chernobyl, radiação pura, contém pão, hamburger ...",
-     valor: 25.00
+     valor: 25.00,
+     link: "/home"
     },
     {nome: "Cherno & Byl´s",
      descricao: "Como o proprio nome diz, nosso carro chefe, é um verdadeiro monstro...",
-     valor: 30.00
+     valor: 30.00,
+     link: "/login"
     },
     {nome: "Celsio 137",
      descricao: "Nosso monstro Brasileiro, verdadeiramente delicioso, contém pão francês...",
-     valor: 28.00
+     valor: 28.00,
+     link: "/busca"
     }
   ]
 

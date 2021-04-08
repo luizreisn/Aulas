@@ -13,14 +13,16 @@
           <ion-icon slot="start"name="search-outline"></ion-icon>
           <h1>Buscar Produto</h1>
         </ion-button>
+        <ion-searchbar (ionFocus)="focado()" (ionBlur)="desfocado()"></ion-searchbar>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+
 
   <ion-menu side="start" menuId="custom" content-id="main" class="customizarMenu">
     <ion-content color="primary">
       <ion-list >
 
-        <ion-button (click)="perfil()">
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="person-circle-outline" slot="start" ></ion-icon>
             <ion-label style="font-size: medium;">Perfil</ion-label>
@@ -81,81 +83,87 @@
   
   <ion-router-outlet id="main"></ion-router-outlet>
 
-<ion-content>
+<ion-list *ngIf="focar == 1; else desfocar">
 
-  <ion-card color="primary" class="ion-text-center cardEndereco">
-    <ion-card-subtitle>Entregar em:</ion-card-subtitle>
-    <ion-card-title>{{endereco.endereco}}, {{endereco.numero}}</ion-card-title>
-    <ion-button>
-      <ion-text style="text-decoration-line: underline;" (click)="trocarEndereco()">Trocar</ion-text>
+</ion-list>
+
+<ng-template #desfocar>
+  <ion-content >
+  
+    <ion-card color="primary" class="ion-text-center cardEndereco">
+      <ion-card-subtitle>Entregar em:</ion-card-subtitle>
+      <ion-card-title>{{endereco.endereco}}, {{endereco.numero}}</ion-card-title>
+      <ion-button>
+        <ion-text style="text-decoration-line: underline;" routerLink="/trocar-endereco">Trocar</ion-text>
+      </ion-button>
+    </ion-card>
+  
+    <ion-button color="warning" class="ion-text-center ion-margin botaoPromocao">
+      <img class="imgBotaoPromocao" src="/assets/img/PromocoesTexto.png" alt="">
     </ion-button>
-  </ion-card>
-
-  <ion-button color="warning" class="ion-text-center ion-margin botaoPromocao">
-    <img class="imgBotaoPromocao" src="/assets/img/PromocoesTexto.png" alt="">
-  </ion-button>
-
-  <ion-row >
-
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu" (click)="lanches()">
-        <img class="imgBotaoMenu" src="/assets/img/lanches.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Lanches</ion-text>
-      </div>
-    </ion-col>
-
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu">
-        <img class="imgBotaoMenu" src="/assets/img/comidas.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Comidas</ion-text>
-      </div>
-    </ion-col>
-
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu">
-        <img class="imgBotaoMenu" src="/assets/img/bebidas.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Bebidas</ion-text>
-      </div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu">
-        <img class="imgBotaoMenu" src="/assets/img/sobremesas.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Sobremesas</ion-text>
-      </div>
-    </ion-col>
-    
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu">
-        <img class="imgBotaoMenu" src="/assets/img/novidades.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Novidades</ion-text>
-      </div>
-    </ion-col>
-    
-    <ion-col size="4" class="ion-no-padding">
-      <ion-button color="success" class="ion-margin botaoMenu">
-        <img class="imgBotaoMenu" src="/assets/img/promocoes.png" alt="">
-      </ion-button>
-      <div class="ion-text-center">
-        <ion-text color="primary">Promoções</ion-text>
-      </div>
-    </ion-col>
-  </ion-row>
-
-  <p><br></p>
-  <p>{{pesquisa}}</p>
-
-</ion-content>
+  
+    <ion-row >
+  
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
+          <img class="imgBotaoMenu" src="/assets/img/lanches.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Lanches</ion-text>
+        </div>
+      </ion-col>
+  
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu">
+          <img class="imgBotaoMenu" src="/assets/img/comidas.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Comidas</ion-text>
+        </div>
+      </ion-col>
+  
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu">
+          <img class="imgBotaoMenu" src="/assets/img/bebidas.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Bebidas</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu">
+          <img class="imgBotaoMenu" src="/assets/img/sobremesas.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Sobremesas</ion-text>
+        </div>
+      </ion-col>
+  
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu">
+          <img class="imgBotaoMenu" src="/assets/img/novidades.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Novidades</ion-text>
+        </div>
+      </ion-col>
+  
+      <ion-col size="4" class="ion-no-padding">
+        <ion-button color="success" class="ion-margin botaoMenu">
+          <img class="imgBotaoMenu" src="/assets/img/promocoes.png" alt="">
+        </ion-button>
+        <div class="ion-text-center">
+          <ion-text color="primary">Promoções</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <p><br></p>
+    <p>{{pesquisa}}</p>
+  
+  </ion-content>
+</ng-template>
 
