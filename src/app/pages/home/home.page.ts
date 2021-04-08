@@ -13,8 +13,24 @@ export class HomePage implements OnInit {
     endereco: "Seu Endereço",
     numero: null
   }
-  public pesquisa = "";
-  public focar= null;  
+  public focar= 0;  
+
+  public produtos=[
+    {nome:"X-Radiação",
+     valor: 25.00,
+     link: ""
+    },
+    {nome: "Cherno & Byl´s",
+     valor: 30.00,
+     link: ""
+    },
+    {nome: "Celsio 137",
+     valor: 28.00,
+     link: ""
+    }
+  ]
+
+  public produtosFiltrados = this.produtos;
 
   constructor(public rota: Router,
               public alerta: AlertController) { }
@@ -22,8 +38,14 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
-  public busca(){
-    this.rota.navigate(["busca"])
+  public buscar(ev: CustomEvent){
+    let val = ev.detail.value;
+    if(val && val.trim() !== ''){
+      this.produtosFiltrados = this.produtos.filter(term => 
+      term.nome.toLocaleLowerCase().indexOf(val.toLocaleLowerCase().trim()) > -1)
+    }else{
+      this.produtosFiltrados = this.produtos;
+    }
   }
 
   public focado(){

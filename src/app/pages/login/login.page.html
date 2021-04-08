@@ -81,7 +81,7 @@
 
         <ion-item class="ion-margin-top" lines="none">
           <ion-label>Nascimento</ion-label>
-          <ion-datetime value="2021-04-19" placeholder="Data de Nacimento" [(ngModel)]="usuario.nascimento"></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" min="1871-01-01" max="2003-12-31" placeholder="Data de Nacimento" [(ngModel)]="usuario.nascimento"></ion-datetime>
         </ion-item>
 
         <ion-item class="ion-margin-top" lines="none">
@@ -92,22 +92,6 @@
             <ion-select-option value="naoDizer">Prefiro Não Dizer</ion-select-option>
           </ion-select>
         </ion-item>
-    
-   <!--<ion-item class="ion-margin-top" lines="none">
-          <ion-input type="number" placeholder="CEP"></ion-input>
-        </ion-item>
-
-   <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="text" placeholder="Endereço"></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="number" placeholder="Numero"></ion-input>
-        </ion-item>
-
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-textarea placeholder="Complemento" autoGrow></ion-textarea>
-        </ion-item> -->
 
         <ion-item class="ion-margin-top" lines="none">
           <ion-input type="email" placeholder="E-Mail" [(ngModel)]="usuario.email"></ion-input>

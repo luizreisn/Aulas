@@ -9,12 +9,9 @@
       <div class="imgLogo">
         <img src="/assets/img/Logo.png" alt="">
       </div>
-        <ion-button class="botaoPesquisa ion-no-padding" color="tertiary" (click)="busca()">
-          <ion-icon slot="start"name="search-outline"></ion-icon>
-          <h1>Buscar Produto</h1>
-        </ion-button>
-        <ion-searchbar (ionFocus)="focado()" (ionBlur)="desfocado()"></ion-searchbar>
-    </ion-toolbar>
+      <ion-searchbar placeholder="Buscar Produto" showCancelButton="focus" 
+                     (ionFocus)="focado()" (ionCancel)="desfocado()" (ionChange)="buscar($event)"></ion-searchbar>
+      </ion-toolbar>
 </ion-header>
 
 
@@ -83,9 +80,18 @@
   
   <ion-router-outlet id="main"></ion-router-outlet>
 
-<ion-list *ngIf="focar == 1; else desfocar">
-
-</ion-list>
+<ion-content *ngIf="focar == 1; else desfocar">
+  <ion-list>
+    <ion-item lines="full" *ngFor = "let produto of produtosFiltrados" class="listaSearch" >
+      <ion-button fill="clear" [routerLink]="produto.link">
+        <ion-label >
+          <h1>{{produto.nome}}</h1>
+          <h3>{{produto.valor | currency: 'BRL'}}</h3>
+        </ion-label>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
 <ng-template #desfocar>
   <ion-content >
@@ -162,8 +168,8 @@
     </ion-row>
   
     <p><br></p>
-    <p>{{pesquisa}}</p>
   
+
   </ion-content>
 </ng-template>
 
