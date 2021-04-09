@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'lanches',
     loadChildren: () => import('./pages/lanches/lanches.module').then( m => m.LanchesPageModule)
+  },  {
+    path: 'x-radiacao',
+    loadChildren: () => import('./pages/x-radiacao/x-radiacao.module').then( m => m.XRadiacaoPageModule)
   },
+
 ];
 
 @NgModule({

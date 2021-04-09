@@ -18,15 +18,15 @@ export class HomePage implements OnInit {
   public produtos=[
     {nome:"X-Radiação",
      valor: 25.00,
-     link: ""
+     link: "/x-radiacao"
     },
     {nome: "Cherno & Byl´s",
      valor: 30.00,
-     link: ""
+     link: "/x-radiacao"
     },
     {nome: "Celsio 137",
      valor: 28.00,
-     link: ""
+     link: "/x-radiacao"
     }
   ]
 

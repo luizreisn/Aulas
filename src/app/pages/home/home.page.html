@@ -26,42 +26,42 @@
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="bicycle-outline" slot="start"></ion-icon>
             <ion-label style="font-size: medium;">Pedidos em Andamento</ion-label>
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="clipboard-outline" slot="start"></ion-icon>
             <ion-label style="font-size: medium;">Pedidos Anteriores</ion-label>
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="heart" slot="start"></ion-icon>
             <ion-label style="font-size: medium;">Favoritos</ion-label>
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="wallet-outline" slot="start"></ion-icon>
             <ion-label style="font-size: medium;">Cupons</ion-label>
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="cash-outline" slot="start"></ion-icon>
             <ion-label style="font-size: medium;">Formas de Pagamento</ion-label>
           </ion-item>
         </ion-button>
 
-        <ion-button>
+        <ion-button routerLink="/perfil">
           <ion-item color="primary">
             <ion-icon name="chatbox-ellipses-outline" slot=start></ion-icon>
             <ion-label style="font-size: medium;">Chats</ion-label>
@@ -80,21 +80,22 @@
   
   <ion-router-outlet id="main"></ion-router-outlet>
 
-<ion-content *ngIf="focar == 1; else desfocar">
-  <ion-list>
-    <ion-item lines="full" *ngFor = "let produto of produtosFiltrados" class="listaSearch" >
-      <ion-button fill="clear" [routerLink]="produto.link">
-        <ion-label >
-          <h1>{{produto.nome}}</h1>
-          <h3>{{produto.valor | currency: 'BRL'}}</h3>
-        </ion-label>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-</ion-content>
-
-<ng-template #desfocar>
+<ng-template #focarSearch>
   <ion-content >
+    <ion-list>
+      <ion-item lines="full" *ngFor = "let produto of produtosFiltrados" class="listaSearch" >
+        <ion-button fill="clear" [routerLink]="produto.link">
+          <ion-label >
+            <h1>{{produto.nome}}</h1>
+            <h3>{{produto.valor | currency: 'BRL'}}</h3>
+          </ion-label>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ng-template>
+
+  <ion-content *ngIf="focar == 0; else focarSearch">
   
     <ion-card color="primary" class="ion-text-center cardEndereco">
       <ion-card-subtitle>Entregar em:</ion-card-subtitle>
@@ -104,7 +105,7 @@
       </ion-button>
     </ion-card>
   
-    <ion-button color="warning" class="ion-text-center ion-margin botaoPromocao">
+    <ion-button color="warning" class="ion-text-center ion-margin botaoPromocao" routerLink="/lanches">
       <img class="imgBotaoPromocao" src="/assets/img/PromocoesTexto.png" alt="">
     </ion-button>
   
@@ -120,7 +121,7 @@
       </ion-col>
   
       <ion-col size="4" class="ion-no-padding">
-        <ion-button color="success" class="ion-margin botaoMenu">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
           <img class="imgBotaoMenu" src="/assets/img/comidas.png" alt="">
         </ion-button>
         <div class="ion-text-center">
@@ -129,7 +130,7 @@
       </ion-col>
   
       <ion-col size="4" class="ion-no-padding">
-        <ion-button color="success" class="ion-margin botaoMenu">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
           <img class="imgBotaoMenu" src="/assets/img/bebidas.png" alt="">
         </ion-button>
         <div class="ion-text-center">
@@ -140,7 +141,7 @@
   
     <ion-row>
       <ion-col size="4" class="ion-no-padding">
-        <ion-button color="success" class="ion-margin botaoMenu">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
           <img class="imgBotaoMenu" src="/assets/img/sobremesas.png" alt="">
         </ion-button>
         <div class="ion-text-center">
@@ -149,7 +150,7 @@
       </ion-col>
   
       <ion-col size="4" class="ion-no-padding">
-        <ion-button color="success" class="ion-margin botaoMenu">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
           <img class="imgBotaoMenu" src="/assets/img/novidades.png" alt="">
         </ion-button>
         <div class="ion-text-center">
@@ -158,7 +159,7 @@
       </ion-col>
   
       <ion-col size="4" class="ion-no-padding">
-        <ion-button color="success" class="ion-margin botaoMenu">
+        <ion-button color="success" class="ion-margin botaoMenu" routerLink="/lanches">
           <img class="imgBotaoMenu" src="/assets/img/promocoes.png" alt="">
         </ion-button>
         <div class="ion-text-center">
@@ -171,5 +172,4 @@
   
 
   </ion-content>
-</ng-template>
 
