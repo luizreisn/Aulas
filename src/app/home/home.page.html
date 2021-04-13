@@ -1,3 +1,5 @@
+<!--Ex 1-->
+
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>
@@ -20,7 +22,7 @@
   <ion-progress-bar [value]="progresso"></ion-progress-bar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
   <ion-toolbar>
     <ion-segment [(ngModel)]="selecionarFiltro" (ionChange)="atualizarFiltro()" >
@@ -55,5 +57,41 @@
       <p>Você ainda nao tem nenhuma rarefa nessa categoria.</p>
     </ion-text>
   </ng-template>
+
+  <p><br><br><br></p>
+
+  <!--Ex2-->
+  <h1 class="negrito">EX: 2 Controle de Gastos</h1>
+  <h3 class="negrito">Seus gastos foram de:</h3>
+  <h1 class="negrito" style="text-align: center; font-size: 3em;">{{valor | currency: 'BRL'}}</h1>
+    
+    
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-no-padding">
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input type="number" [(ngModel)]="valorInput"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-button (click)="gasto()" fill="clear"  >
+        <ion-icon slot="icon-only" name="cash-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list *ngFor="let transacao of transacoes" class="ion-padding">
+    <ion-label>
+      <ion-row>
+        <ion-col>
+          {{transacao.valor | currency: 'BRL'}}
+        </ion-col>
+        <ion-col size="auto">
+          {{transacao.data | date: 'short'}}
+        </ion-col>
+      </ion-row>
+    </ion-label>
+  </ion-list>
+
 
 </ion-content>

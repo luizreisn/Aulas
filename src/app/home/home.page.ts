@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 
+//ex1
 interface Tarefa { //criando um tipo Tarefa que tem as propriedades
   nome: string;
   feita: boolean;
+}
+
+//ex2
+interface Transacao{
+  valor: number;
+  data: Date;
 }
 
 @Component({
@@ -12,14 +19,22 @@ interface Tarefa { //criando um tipo Tarefa que tem as propriedades
 })
 export class HomePage {
 
+  //ex1
   public tarefas: Tarefa[] = [] //criando uma lista de tarefas que tera objetos Tarefa
   public tarefasFiltradas: Tarefa[] = this.tarefas; //a lista filtrada é uma copia da lista original porem sera filtrada conforme o filtro
   public novaTarefa = '';
   public progresso = 0;
   public selecionarFiltro: 'todas' | 'paraFazer' | 'feitas' = 'todas'; //separa os tipos de resultados que pode-se atribuir a essa variavel
 
+  //ex2
+  public valor = 0;
+  public valorInput = null;
+
+  public transacoes: Transacao[] = []
+
   constructor() {}
 
+  //ex1
   public adicionarTarefa(){
     if(this.novaTarefa.trim().length == 0){ //verifica se o tamanho da string é igual a 0 se for retorna, a função trim tira os espaços vazios
       return;
@@ -68,6 +83,17 @@ export class HomePage {
     }else{
       this.tarefasFiltradas = this.tarefas.filter(tarefa => !tarefa.feita)
     }
+  }
+
+
+  //ex2
+  public gasto(){
+    this.valor += this.valorInput;
+    this.transacoes.unshift({ //coloca os novos elementos da lista na frente
+      valor: this.valorInput,
+      data: new Date()
+    })
+    this.valorInput = null;
   }
 
 }
