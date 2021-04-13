@@ -16,18 +16,44 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
+  <ion-progress-bar [value]="progresso"></ion-progress-bar>
 </ion-header>
 
 <ion-content>
 
-  <ion-list>
-    <ion-item *ngFor = "let tarefa of tarefas">
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selecionarFiltro" (ionChange)="atualizarFiltro()" >
+      <ion-segment-button value="todas">
+        <ion-label>Todas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="paraFazer">
+        <ion-label>Para Fazer</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="feitas">
+        <ion-label>Feitas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <ion-list *ngIf="tarefasFiltradas.length > 0; else vazia">
+    <ion-item *ngFor = "let tarefa of tarefasFiltradas">
       <ion-label>{{tarefa.nome}}</ion-label>
-      <ion-checkbox slot="start" [(ngModel)]="tarefa.feita"></ion-checkbox>
+      <ion-checkbox slot="start" [(ngModel)]="tarefa.feita" (ionChange)="calcularProgesso()"></ion-checkbox>
+    
+    <ion-button slot="end" color="danger" fill="clear" (click)="removerTarefa(tarefa)"> <!--Passa a tarefa em questão como parametro-->
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
     </ion-item>
   </ion-list>
 
-  <pre>{{tarefas | json}}</pre>
-  <pre>{{novaTarefa | json}}</pre>
+  <ng-template #vazia>
+    <ion-text color="medium" class="ion-text-center">
+      <h1>
+        <ion-icon slot="start" name="sad-outline" style="font-size: 2em;"></ion-icon>
+      </h1>
+      <p>Você ainda nao tem nenhuma rarefa nessa categoria.</p>
+    </ion-text>
+  </ng-template>
 
 </ion-content>
