@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
-  interface Task{
-    name: string;
-    done: boolean;
-  }
+interface Tarefa { //criando um tipo Tarefa que tem as propriedades
+  nome: string;
+  feita: boolean;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,38 +12,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  public tasks: Task[]= []
-  public newTaskName = '';
-  public progress = 0;
+  public tarefas: Tarefa[] = [] //criando uma lista de tarefas que tera objetos Tarefa
+  public novaTarefa = '';
 
   constructor() {}
 
-  public addNewTask(){
-    if(this.newTaskName.trim().length == 0)
-    this.tasks.push({
-      name: this.newTaskName.trim(),
-      done: false
+  public adicionarTarefa(){
+    if(this.novaTarefa.trim().length == 0){ //verifica se o tamanho da string é igual a 0 se for retorna, a função trim tira os espaços vazios
+      return;
+    }
+    this.tarefas.push({ //push: adiciona ao fim de uma lista um objeto novo
+      nome: this.novaTarefa.trim(),
+      feita: false
     })
-    this.newTaskName = '';
-    this.calculateProgress();
-  }
-
-  public calculateProgress(){
-    //let completedTasks = 0;
-    //for(let task of this.tasks){
-    //  if(task){
-    //    completedTasks++;
-    //  }
-    //}
-    //this.progress = completedTasks / this.tasks.length;
-  
-    this.progress = this.tasks.filter(function(t){
-      return t.done;
-    }).length / this.tasks.length
-  } 
-
-  public removeTask(toRemove: Task){
-    const index = this.tasks.findIndex(t => t == toRemove)
+    this.novaTarefa = ''; //zera o input depois de clicar o botao
   }
 
 }
