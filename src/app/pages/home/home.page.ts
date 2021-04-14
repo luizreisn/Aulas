@@ -62,14 +62,13 @@ export class HomePage implements OnInit {
       header: 'Deseja mesmo sair?',
       buttons: [{
           text: 'Cancel',
-          role: 'cancel',
           handler: () => {
             console.log('Confirm Cancel');
           }
         },{
           text: 'Sair',
-          handler: (alertData) => {
-            console.log('Confirm OK');
+          handler: () => {
+            console.log('Confirm OK'),
             this.rota.navigate(["login"]);
           }
         }
