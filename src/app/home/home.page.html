@@ -22,7 +22,7 @@
         </ion-button>
       </ion-col>
       <ion-col size="4">
-        <ion-button (click)="resetar()" [disabled]="contador.maximo == 0" color="danger">
+        <ion-button (click)="confirmarReset()" [disabled]="contador.maximo == 0" color="danger">
           <ion-icon name="refresh-circle-outline"></ion-icon>
         </ion-button>
       </ion-col>
@@ -58,7 +58,7 @@
         </ion-button>
       </ion-col>
       <ion-col size="auto">
-        <ion-button (click)="sacarTudo()" [disabled]="conta.atual<=0" fill="outline" color="danger">
+        <ion-button (click)="confirmarSacarTudo()" [disabled]="conta.atual<=0" fill="outline" color="danger">
           sacar tudo
         </ion-button>
       </ion-col>

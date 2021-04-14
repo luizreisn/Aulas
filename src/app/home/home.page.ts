@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +32,8 @@ export class HomePage {
     maximo: 0
   }
 
-  constructor() {}
+  constructor(private alerta: AlertController) {}
+
     public incrementar(){
       if(this.contador.atual == this.contador.maximo){
         this.contador.maximo ++;
@@ -45,7 +47,22 @@ export class HomePage {
       this.contador.atual --;
     }
 
-    public resetar(){
+    public async confirmarReset(){
+      const alert = await this.alerta.create({
+        header: 'Tem certeza?',
+        message: 'Seu contador será resetado.',
+        buttons:[
+          {
+            text: 'Resetar',
+            handler: () => this.resetar()
+          },
+          'Cancelar'
+        ]
+      })
+      alert.present()
+    }
+
+    private resetar(){
       this.contador.atual = 0,
       this.contador.maximo = 0;
     }
@@ -62,6 +79,21 @@ export class HomePage {
     public depositar(){
       this.conta.atual += this.conta.input;
       this.conta.input = null;
+    }
+
+    public async confirmarSacarTudo(){
+      const alert = await this.alerta.create({
+        header: 'Tem certeza?',
+        message: 'Seu saldo será resetado.',
+        buttons:[
+          {
+            text: 'Sacar Tudo',
+            handler: () => this.sacarTudo()
+          },
+          'Cancelar'
+        ]
+      })
+      alert.present()
     }
 
     public sacarTudo(){
