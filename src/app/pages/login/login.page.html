@@ -33,7 +33,7 @@
           <ion-input type="password" placeholder="Senha" [(ngModel)]="usuario.senha"></ion-input>
         </ion-item>
 
-        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="login()" (click)="carregar()">
+        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="login()">
           Entrar
         </ion-button>
 
@@ -46,17 +46,17 @@
       
       <ion-row class="redes">
         <ion-col size="4">
-          <ion-button fill="clear" class="botaoRedes" >
+          <ion-button fill="clear">
             <ion-icon name="logo-instagram"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="4">
-          <ion-button fill="clear" class="botaoRedes">
+          <ion-button fill="clear">
             <ion-icon name="logo-facebook"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="4">
-          <ion-button fill="clear" class="botaoRedes">
+          <ion-button fill="clear">
             <ion-icon name="logo-twitter"></ion-icon>
           </ion-button>
         </ion-col>
@@ -101,7 +101,7 @@
           <ion-input type="password" placeholder="Senha" [(ngModel)]="usuario.senha"></ion-input>
         </ion-item>
 
-        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="cadastrar()" (click)="carregar()">
+        <ion-button class="ion-margin-top" color="primary" expand="block" (click)="cadastrar()">
           Cadastrar
         </ion-button>
       </div>

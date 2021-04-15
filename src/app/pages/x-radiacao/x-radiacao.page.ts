@@ -1,6 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
+interface Produto{
+  nome: string;
+  descricao: string;
+  valor: number;
+  link: string;
+  imagem: string;
+  condimentos: {
+    nome: string;
+    marcado: boolean;
+  }[];
+}
+
 @Component({
   selector: 'app-x-radiacao',
   templateUrl: './x-radiacao.page.html',
@@ -8,7 +20,7 @@ import {Router} from '@angular/router'
 })
 export class XRadiacaoPage implements OnInit {
 
-  public produtos=
+  public produtos: Produto=
     {nome:"X-Radiação",
      descricao:"Hamburguer diretamente de chernobyl, radiação pura, contém pão, hamburger bolvino, cheddar, maionese verde, cebola caramelizada, bacon e nosso molho especial.",
      valor: 25.00,

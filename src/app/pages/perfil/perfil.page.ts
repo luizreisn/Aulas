@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Dados{
+  nome: string;
+  cpf: number;
+  celular: number;
+  sexo: string;
+  nascimento: Date;
+  email: string;
+  senha: string;
+}
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
@@ -7,14 +17,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
   
-  public perfil={
+  public perfil: Dados={
     nome: "",
     cpf: null,
     celular: null,
     sexo: "",
     nascimento: null,
     email: "",
-    senha: null
+    senha: ""
   }
 
   constructor() { }

@@ -1,9 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmailValidator, NgModel } from '@angular/forms';
 import { IonSlides } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import {Router} from '@angular/router'
+
+interface Dados{
+  nome: string;
+  telefone: number;
+  cpf: number;
+  nascimento: Date;
+  sexo: string;
+  email: string;
+  senha: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -14,14 +24,14 @@ export class LoginPage implements OnInit {
 
   @ViewChild(IonSlides) slides: IonSlides;
 
-  public usuario={
+  public usuario: Dados={
     nome: "",
     telefone: null,
     cpf: null,
     nascimento: null,
     sexo: "",
     email: "",
-    senha: null
+    senha: ""
   }
   
   constructor(public carregando: LoadingController,
@@ -43,6 +53,7 @@ export class LoginPage implements OnInit {
   public login(){
     console.log('email: ' ,this.usuario.email);
     console.log('senha: ' ,this.usuario.senha);
+    this.carregar();
   }
 
   public async alertaSenha() {
@@ -79,6 +90,7 @@ export class LoginPage implements OnInit {
     console.log('sexo: ' ,this.usuario.sexo);
     console.log('e-mail: ' ,this.usuario.email);
     console.log('senha: ' ,this.usuario.senha);
+    this.carregar();
   }
 
   async carregar() {

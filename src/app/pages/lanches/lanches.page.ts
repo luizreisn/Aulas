@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+
+interface Produto{
+  nome: string;
+  descricao: string;
+  valor: number;
+  link: string;
+}
 
 @Component({
   selector: 'app-lanches',
@@ -9,7 +15,7 @@ import {Router} from '@angular/router'
 export class LanchesPage implements OnInit {
 
   public pesquisa="";
-  public produtosCarne=[
+  public produtosCarne: Produto[]=[
     {nome:"X-Radiação",
      descricao:"Hamburguer diretamente de chernobyl, radiação pura, contém pão, hamburger ...",
      valor: 25.00,
@@ -27,7 +33,7 @@ export class LanchesPage implements OnInit {
     }
   ]
 
-  constructor(public rota: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -2,6 +2,12 @@ import { Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router'
 import { AlertController } from '@ionic/angular';
 
+interface Produto{
+  nome: string;
+  valor: number;
+  link: string;
+}[]
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -15,7 +21,7 @@ export class HomePage implements OnInit {
   }
   public focar= 0;  
 
-  public produtos=[
+  public produtos: Produto[]=[
     {nome:"X-Radiação",
      valor: 25.00,
      link: "/x-radiacao"

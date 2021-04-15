@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
+interface Endereco{
+  cep: number;
+  endereco: string;
+  numero: number;
+  complemento: string;
+}
+
 @Component({
   selector: 'app-trocar-endereco',
   templateUrl: './trocar-endereco.page.html',
@@ -8,7 +15,7 @@ import {Router} from '@angular/router'
 })
 export class TrocarEnderecoPage implements OnInit {
 
-  public enderecoTroca={
+  public enderecoTroca: Endereco={
     cep: null,
     endereco:  "",
     numero: null,
