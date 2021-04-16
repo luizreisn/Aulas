@@ -21,41 +21,49 @@ export class HomePage {
 
   public resultados: Resultado[] = [
     {
-      titulo: 'DOTA 2',
-      descricao: 'Um jogo online em que você passa pouca raiva, contanto que ninguém picke Pudge ou Techies na ranked. Melhor que LOL.',
-      img: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/blog/play/dota_heroes.png'
+      titulo: 'Gay',
+      descricao: 'Você é uma poc mesmo hein bicha, adorei, bem vinda ao vale kerelho.',
+      img: 'https://images.pexels.com/photos/1191710/pexels-photo-1191710.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     },
     {
-      titulo: 'Counter-Strike: Global Offensive',
-      descricao: 'Um jogo que a Valve se importa tanto que deixou bug rolar em campeanato e ficou de boa. 1.6 era melhor.',
-      img: 'https://img.ibxk.com.br/2021/04/13/cs-go-13181322525349.png'
+      titulo: 'Bi',
+      descricao: 'Bi Sexy Uau, não passa fome nunca porque come dos dois lados.',
+      img: 'https://images.pexels.com/photos/6785046/pexels-photo-6785046.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     },
     {
-      titulo: 'Dark Souls',
-      descricao: 'Um jogo pra relaxar.',
-      img: 'https://cdn.awsli.com.br/600x700/1610/1610163/produto/62282768/poster-dark-souls-3-b-2159bacc.jpg'
+      titulo: 'Hetero',
+      descricao: 'Eae parça, bora jogar uma e fazer uma brotheragem sem compromisso.',
+      img: 'https://images.pexels.com/photos/5890067/pexels-photo-5890067.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 
     },
     {
-      titulo: 'Sonic',
-      descricao: 'Por incrível que pareça, às vezes é mais estressante que Dark Souls.',
-      img: 'https://poltronanerd.com.br/wp-content/uploads/2020/09/Sonic.png'
+      titulo: 'Icognita',
+      descricao: 'Você conseguiu bugar nosso sistema, mas provavelmente deve ser LGBTQIA+.',
+      img: 'https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
     }
   ]
 
   public questoes: Questao[] = [
     {
-      texto: 'Qual gênero de jogo você gosta mais?',
-      opcao: ['MOBA', 'FPS', 'RPG', 'Plataforma']
+      texto: 'Você sente atração pelo sexo oposto ao seu?',
+      opcao: ['Sim, obviooo', 'Pelos 2 sexos', 'Não, sai dae man', 'Não tenho certeza']
     },
     {
-      texto: 'Qual plataforma de jogo você gosta mais?',
-      opcao: ['PC', 'PS5', 'XBox', 'Switch']
+      texto: 'Você ja se sentiu atraido SEXUALMENTE pelo sexo oposto ao seu?',
+      opcao: ['Sim, sempre', 'Pelos 2 Sexos', 'Não, nunca', 'Não tenho certeza']
     },
     {
-      texto: 'Qual ambientação você gosta mais?',
-      opcao: ['Fantasia', 'Realismo', 'Medieval', 'Pixel Art']
+      texto: 'Você ouve muita musica pop?',
+      opcao: ['SIM meu estilo favorito', 'As vezes sim mas adoro um Funk tb', 'Que isso man, so ouço Funk +18', 'Não sei']
     },
+    {
+      texto: 'Conhece alguma diva pop?',
+      opcao: ['Sim, todas','Algumas, só as mais famosas','Que isso?','Não tenho certeza']
+    },
+    {
+      texto: 'Sabe alguma coreografia?',
+      opcao: ['Sim, todas','Só algumas','Não faço ballet não','Não tenho certeza']
+    }
   ]
 
   public pontuacao = [0, 0, 0, 0];
