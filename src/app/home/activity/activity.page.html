@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar class="ion-text-start" >
+    <ion-text>
+      <h1><strong>Atividade</strong></h1>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Hoje </ion-label>
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let i of [1,2,3,4,5]">
+      <ion-avatar slot="start">
+        <img [src]="'https://randomuser.me/api/portraits/men/'+ (i + 20) +'.jpg'" >
+      </ion-avatar>
+      <ion-label>
+        <strong>fulanodetal{{i}}</strong> curtiu a sua foto
+      </ion-label>
+    </ion-item>
+    <ion-list-header>
+      <ion-label>Esta Semana </ion-label>
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let i of [1,2,3,4,5]">
+      <ion-avatar slot="start">
+        <img [src]="'https://randomuser.me/api/portraits/men/'+ (i) +'.jpg'" >
+      </ion-avatar>
+      <ion-label>
+        <strong>fulanodetal{{i}}</strong> começou a seguir você
+      </ion-label>
+    </ion-item>
+    <ion-list-header>
+      <ion-label>Este Mês </ion-label>
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let i of [1,2,3,4,5]">
+      <ion-avatar slot="start">
+        <img [src]="'https://randomuser.me/api/portraits/men/'+ (i*8) +'.jpg'" >
+      </ion-avatar>
+      <ion-label>
+        <strong>fulanodetal{{i}}</strong> comentou na sua foto
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

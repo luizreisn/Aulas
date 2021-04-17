@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar class="ion-text-start">
+    <ion-text> 
+      <h3><strong>luizreisn</strong></h3>
+    </ion-text>
+
+    <ion-buttons slot="end">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button color="dark" menu="menu-perfil"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="profile">
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="auto">
+      <ion-avatar class="profile-avatar">
+        <img src="assets/img/perfil.jpg" />
+      </ion-avatar>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <h4 class="ion-no-margin"><strong>30</strong></h4>
+      <p class="ion-no-margin">Publicações</p>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <h4 class="ion-no-margin"><strong>1736</strong></h4>
+      <p class="ion-no-margin">Seguidores</p>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <h4 class="ion-no-margin"><strong>898</strong></h4>
+      <p class="ion-no-margin">Seguindo</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="marginBio">
+    <ion-col class="ion-no-padding">
+      <p><strong>Luiz Reis</strong></p>
+      <p style="color: rgb(161, 161, 161);">Figura Publica</p>
+      <p>2.0 <br>SP | ♈ | 🏳‍🌈</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-button expand="block" fill="outline" color="dark" class="botaoEditar">
+    Editar Perfil
+  </ion-button>
+  <ion-row>
+    <ion-col size="4" class="ion-no-padding" style="padding-left: 5px;">
+      <ion-button expand="block" fill="outline" color="dark" class="botaoCol">
+        Promoções
+      </ion-button>
+    </ion-col>
+    <ion-col size="4" class="ion-no-padding">
+      <ion-button expand="block" fill="outline" color="dark" class="botaoCol">
+        Insights
+      </ion-button>
+    </ion-col>
+    <ion-col size="4" class="ion-no-padding" style="padding-right: 5px;">
+      <ion-button expand="block" fill="outline" color="dark" class="botaoCol">
+        Salvos
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="feedProfile" size="4" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+      <img [src]="'https://picsum.photos/id/'+(i*8) +'/200/200'" />
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<ion-menu contentId="profile" menuId="menu-perfil" side="end" type="push">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>luizreisn</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon slot="start"name="settings-outline"></ion-icon>
+        <ion-label>Configurações</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start"name="time-outline"></ion-icon>
+        <ion-label>Items Arquivados</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start"name="bar-chart-outline"></ion-icon>
+        <ion-label>Sua Atividade</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start"name="qr-code-outline"></ion-icon>
+        <ion-label>Codigo QR</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start"name="bookmark-outline"></ion-icon>
+        <ion-label>Salvos</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start"name="person-add-outline"></ion-icon>
+        <ion-label>Encontrar Pessoas </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

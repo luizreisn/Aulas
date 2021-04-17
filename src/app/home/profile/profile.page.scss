@@ -1,0 +1,39 @@
+h3{
+    margin-left: 15px;
+}
+
+.profile-avatar{
+    height: 70px;
+    width: 70px;
+    margin: 7px;
+}
+
+.marginBio{
+    margin-left: 13px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    p{
+        margin: 0;
+    }
+}
+
+.botaoEditar{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: auto;
+    height: 30px;
+    --border-radius: 3px;
+}
+.botaoCol{
+    height: 30px;
+    --border-radius: 3px;
+}
+
+
+.feedProfile{
+    padding: 0.5px;
+    img{
+        margin-bottom: -4px;
+    }
+    
+}

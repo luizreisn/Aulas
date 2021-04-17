@@ -1,0 +1,62 @@
+ion-title{
+    img{
+        height: 45px;
+        margin-bottom: auto;
+        margin-top: 5px;
+    }
+}
+
+ion-slide{
+   width: 70px; 
+   margin: 0.25em 0.5em;
+   p{
+       font-size: 8pt;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+       overflow: hidden;
+   }
+   ion-avatar{
+       height: 70px;
+       width: 70px;
+       margin: auto;
+       border: 3px orange solid;
+   }
+}
+
+.cardPost{
+    border-radius: 0px;
+    box-shadow: none;
+    .avatarPost{
+        width: 35px;
+        height: 35px;
+        margin: 3px;
+    }
+    .mlAuto{
+        margin-left: auto;
+    }
+    .botoesPost{
+        padding: 0;
+    }
+    .textosPost{
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .verComentarios{
+        color: rgb(161, 161, 161);
+    }
+    .avatarComentario{
+        height: 25px;
+        width: 25px;
+        margin-left: 15px;
+        border: 2px white solid;
+        z-index: 1;
+        + .avatarComentario{
+            margin-left: -10px;
+            margin-right: 10px;
+            z-index: 0;
+        }
+    }
+    
+}
+
