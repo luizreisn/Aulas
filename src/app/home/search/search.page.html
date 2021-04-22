@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-searchbar placeholder="Pesquisar"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="qr-code" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="feedProfile" size="4" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]">
+      <img [src]="'https://picsum.photos/id/'+(i+8) +'/200/200'" />
+    </ion-col>
+  </ion-row>
+</ion-content>
