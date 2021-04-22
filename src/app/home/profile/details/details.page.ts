@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-details',
+  templateUrl: './details.page.html',
+  styleUrls: ['./details.page.scss'],
 })
-export class ProfilePage implements OnInit {
-
-  public nColunas: 3 | 1 = 3;
+export class DetailsPage implements OnInit {
 
   public posts = [
     {
@@ -67,9 +66,19 @@ export class ProfilePage implements OnInit {
     }
   ]
 
-  constructor() { }
+  public post;
+
+  constructor(route: ActivatedRoute) {
+    const postId: number = +route.snapshot.paramMap.get('photoId');
+    this.post = this.posts.find(p => p.id === postId)
+   }
 
   ngOnInit() {
+  }
+
+  public toggleLike(post){
+    post.usado = true;
+    post.curtido = !post.curtido
   }
 
 }
