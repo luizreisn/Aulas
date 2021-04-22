@@ -43,18 +43,15 @@
     </ion-col>
   </ion-row>
 
-  <ion-button expand="block" fill="outline" color="dark" class="botaoEditar">
-    Editar Perfil
-  </ion-button>
   <ion-row>
     <ion-col size="4" class="ion-no-padding" style="padding-left: 5px;">
       <ion-button expand="block" fill="outline" color="dark" class="botaoCol">
-        Promoções
+        Editar Perfil
       </ion-button>
     </ion-col>
     <ion-col size="4" class="ion-no-padding">
       <ion-button expand="block" fill="outline" color="dark" class="botaoCol">
-        Insights
+        Promoções
       </ion-button>
     </ion-col>
     <ion-col size="4" class="ion-no-padding" style="padding-right: 5px;">
@@ -64,9 +61,18 @@
     </ion-col>
   </ion-row>
 
+  <ion-segment mode="md" color="dark" [(ngModel)]="nColunas">
+    <ion-segment-button [value] = 3>
+      <ion-icon name="grid-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button [value] = 1>
+      <ion-icon name="albums-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
   <ion-row>
-    <ion-col class="feedProfile" size="4" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
-      <img [src]="'https://picsum.photos/id/'+(i*8) +'/200/200'" />
+    <ion-col class="feedProfile" [size]="12/nColunas" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+      <img [src]="'https://picsum.photos/id/'+(i*8) +'/500/500'" />
     </ion-col>
   </ion-row>
 
@@ -80,27 +86,27 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="settings-outline"></ion-icon>
         <ion-label>Configurações</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="time-outline"></ion-icon>
         <ion-label>Items Arquivados</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="bar-chart-outline"></ion-icon>
         <ion-label>Sua Atividade</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="qr-code-outline"></ion-icon>
         <ion-label>Codigo QR</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="bookmark-outline"></ion-icon>
         <ion-label>Salvos</ion-label>
       </ion-item>
-      <ion-item>
+      <ion-item button>
         <ion-icon slot="start"name="person-add-outline"></ion-icon>
         <ion-label>Encontrar Pessoas </ion-label>
       </ion-item>
