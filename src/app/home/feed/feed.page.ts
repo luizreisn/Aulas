@@ -11,31 +11,26 @@ export class FeedPage implements OnInit {
     {
       id: 22,
       curtido: true,
-      usado: false,
       user: 'luizreisn',
       descricao: 'Foto legal'
     },{
       id: 7,
       curtido: false,
-      usado: false,
       user: 'luizreisn',
       descricao: 'Foto media'
     },{
       id: 3,
       curtido: true,
-      usado: false,
       user: 'luizreisn',
       descricao: 'Foto ruim'
     },{
       id: 78,
       curtido: false,
-      usado: false,
       user: 'luizreisn',
       descricao: 'Foto mais ou menos'
     },{
       id: 45,
       curtido: true,
-      usado: false,
       user: 'luizreisn',
       descricao: 'Foto boa'
     }
@@ -45,10 +40,4 @@ export class FeedPage implements OnInit {
 
   ngOnInit() {
   }
-
-  public toggleLike(post){
-    post.usado = true;
-    post.curtido = !post.curtido
-  }
-
 }
