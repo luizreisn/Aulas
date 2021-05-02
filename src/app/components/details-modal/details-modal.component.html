@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Detalhes do Contato
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto" class="ion-margin-end">
+          <ion-avatar>
+            <img [src]="'//github.com/'+contato.usuario+'.png'" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <h1>{{contato.nome}}</h1>
+          <h2>{{contato.usuario}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-button (click)="fecharModal()" [routerLink]="['/edit', contato.usuario]" expand="block" fill="clear">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Editar
+      </ion-button>
+      <ion-button (click)="fecharModal()" expand="block" fill="clear">
+        <ion-icon slot="start" name="close-outline"></ion-icon>
+        Fechar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
