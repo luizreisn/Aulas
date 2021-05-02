@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Musica, MusicaService } from '../services/musica.service';
 
 @Component({
@@ -11,13 +12,16 @@ export class EditPage{
 
   public musica: Musica;
 
-  constructor(route: ActivatedRoute, private musicaService: MusicaService) { 
+  constructor(route: ActivatedRoute, 
+              private musicaService: MusicaService,
+              private nav: NavController) { 
     const id = +route.snapshot.paramMap.get('id');
     this.musica = musicaService.getMusicaId(id);
   }
 
   public atualizar(){
     this.musicaService.atualizarMusica(this.musica);
+    this.nav.back()
   }
 
 }

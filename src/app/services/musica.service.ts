@@ -34,5 +34,10 @@ export class MusicaService {
     this.musicas[index] = musicaAtualizada;
   }
 
+  public criarMusica(musicaNova: Musica){
+    musicaNova.id = 1 + Math.max(0, ...this.musicas.map(m => m.id))
+    this.musicas.push(musicaNova);
+  }
+
   constructor() { }
 }
