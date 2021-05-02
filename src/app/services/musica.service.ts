@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Storage} from '@ionic/storage-angular'
 
 export interface Musica{
   id: number;
@@ -25,6 +26,15 @@ export class MusicaService {
     { id: 10, artista: 'Beyoncé', titulo: 'Formation', favorito: true},
   ]
 
+  public salvarNoStorage(){
+    this.storage.set('Musicas', this.musicas)
+  }
+
+  public async carregarNoStorage(){
+    const carregarMusicas = await this.storage.get('Musicas');
+    this.musicas.push(...carregarMusicas);
+  }
+
   public getMusicaId(id: number){
     return {... this.musicas.find(m => m.id === id) };
   }
@@ -32,12 +42,16 @@ export class MusicaService {
   public atualizarMusica(musicaAtualizada: Musica){
     const index = this.musicas.findIndex(m => m.id === musicaAtualizada.id);
     this.musicas[index] = musicaAtualizada;
+    this.salvarNoStorage();
   }
 
   public criarMusica(musicaNova: Musica){
     musicaNova.id = 1 + Math.max(0, ...this.musicas.map(m => m.id))
     this.musicas.push(musicaNova);
+    this.salvarNoStorage();
   }
 
-  constructor() { }
+  constructor(private storage: Storage) { 
+    this.carregarNoStorage();
+  }
 }
