@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Músicas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item [routerLink]="['/edit', musica.id]" *ngFor = "let musica of musicas">
+      <ion-avatar slot="start">
+        <img [src]="'https://picsum.photos/id/'+musica.id * 40+'/500/500'" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{musica.titulo}}</h2>
+        <p>{{musica.artista}}</p>
+      </ion-label>
+      <ion-icon color="primary" slot="end" [name]="musica.favorito ? 'star' : 'star-outline'"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

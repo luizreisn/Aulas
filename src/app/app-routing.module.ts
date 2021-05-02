@@ -14,6 +14,14 @@ const routes: Routes = [
     path: 'page2',
     loadChildren: () => import('./page2/page2.module').then( m => m.Page2PageModule)
   },
+  {
+    path: 'musicas',
+    loadChildren: () => import('./musicas/musicas.module').then( m => m.MusicasPageModule)
+  },
+  {
+    path: 'edit',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
 
 ];
 
