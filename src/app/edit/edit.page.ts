@@ -24,4 +24,9 @@ export class EditPage{
     this.nav.back()
   }
 
+  public deletar(){
+    this.musicaService.excluirMusica(this.musica.id);
+    this.nav.back();
+  }
+
 }

@@ -27,12 +27,14 @@ export class MusicaService {
   ]
 
   public salvarNoStorage(){
-    this.storage.set('Musicas', this.musicas)
+    this.storage.set('musicas', this.musicas)
   }
 
   public async carregarNoStorage(){
-    const carregarMusicas = await this.storage.get('Musicas');
-    this.musicas.push(...carregarMusicas);
+    const carregarMusicas = await this.storage.get('musicas');
+    if(carregarMusicas){
+      this.musicas.push(...carregarMusicas);
+    }
   }
 
   public getMusicaId(id: number){
@@ -48,6 +50,12 @@ export class MusicaService {
   public criarMusica(musicaNova: Musica){
     musicaNova.id = 1 + Math.max(0, ...this.musicas.map(m => m.id))
     this.musicas.push(musicaNova);
+    this.salvarNoStorage();
+  }
+
+  public excluirMusica(id: number){
+    const index = this.musicas.findIndex(m => m.id === id);
+    this.musicas.splice(index , 1);
     this.salvarNoStorage();
   }
 
