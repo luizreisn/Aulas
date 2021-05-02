@@ -1,11 +1,27 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Contatos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor = "let contato of contatos" (click)="abrirModal(contato)">
+      <ion-avatar slot="start">
+        <img [src]="'//github.com/'+contato.usuario+'.png'" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{contato.nome}}</h2>
+        <p>{{contato.usuario}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab routerLink="/create" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

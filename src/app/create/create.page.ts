@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {Contato} from '../home/home.page'
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.page.html',
   styleUrls: ['./create.page.scss'],
 })
-export class CreatePage implements OnInit {
+export class CreatePage{
+
+  public novoContato: Contato = {
+    nome: '',
+    usuario: ''
+  }
 
   constructor() { }
 
-  ngOnInit() {
+  adicionarContato(){
+    console.log('Salvando ', this.novoContato)
   }
 
 }

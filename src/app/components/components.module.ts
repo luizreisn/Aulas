@@ -4,10 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { DetailsModalComponent } from './details-modal/details-modal.component';
 
 @NgModule({
-  declarations: [ContactFormComponent],
-  exports: [ContactFormComponent],
+  declarations: [ContactFormComponent, DetailsModalComponent],
+  exports: [ContactFormComponent, DetailsModalComponent],
   imports: [
     CommonModule,
     FormsModule,

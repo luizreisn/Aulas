@@ -10,20 +10,5 @@
 </ion-header>
 
 <ion-content>
-  <app-contact-form></app-contact-form>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Usuário</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-button expand="block" >
-      <ion-icon slot="start" name="save"></ion-icon>
-      Salvar
-    </ion-button>
-  </ion-list>
+  <app-contact-form [contato]="novoContato" (salvado)="adicionarContato()"></app-contact-form>
 </ion-content>
