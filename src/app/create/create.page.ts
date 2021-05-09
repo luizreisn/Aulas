@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {Contato} from '../home/home.page'
+import { NavController } from '@ionic/angular';
+import { Contato, ContatosService } from '../services/contatos.service';
 
 @Component({
   selector: 'app-create',
@@ -13,10 +14,12 @@ export class CreatePage{
     usuario: ''
   }
 
-  constructor() { }
+  constructor(private contatoService: ContatosService,
+              private nav: NavController) { }
 
   adicionarContato(){
-    console.log('Salvando ', this.novoContato)
+    this.contatoService.addContato(this.novoContato);
+    this.nav.back();
   }
 
 }

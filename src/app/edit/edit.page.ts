@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Contato } from '../home/home.page';
+import { NavController } from '@ionic/angular';
+import { Contato, ContatosService } from '../services/contatos.service';
 
 @Component({
   selector: 'app-edit',
@@ -9,46 +10,19 @@ import { Contato } from '../home/home.page';
 })
 export class EditPage{
 
-  private contatos: Contato[] = [
-    {
-      nome: 'Luiz Reis',
-      usuario: 'luizreisn'
-    },{
-      nome: 'Carolina',
-      usuario: 'sushiland'
-    },{
-      nome: 'Karine',
-      usuario: 'kaf135'
-    },{
-      nome: 'João Pedro',
-      usuario: 'jpssantiago'
-   },{
-      nome: 'Beatriz',
-      usuario: 'BeatrizMarcos'
-   },{
-      nome: 'Luccas',
-      usuario: 'itsLuccas'
-   },{
-      nome: 'Nícolas',
-      usuario: 'NicolasRMarques'
-   },{
-      nome:'Leonardo Ap',   
-      usuario:'LeonardoAp96'   
-   },{
-      nome: 'Sophia',
-      usuario: 'sophiafmartins'
-   }
-  ]
-
   public contato: Contato;
+  private usuario: string;
 
-  constructor(private route: ActivatedRoute) {
-    const usuario = route.snapshot.paramMap.get('usuario');
-    this.contato = this.contatos.find(c => c.usuario === usuario);
+  constructor(route: ActivatedRoute,
+              private contatoService: ContatosService,
+              private nav: NavController) {
+    this.usuario = route.snapshot.paramMap.get('usuario');
+    this.contato = this.contatoService.encontreContatoPorUsuario(this.usuario)
   }
 
   editarContato(){
-    console.log('Atualizando', this.contato)
+    this.contatoService.atualizarContato(this.usuario, this.contato)
+    this.nav.back();
   }
 
 }
