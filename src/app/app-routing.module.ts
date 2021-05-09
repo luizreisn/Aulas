@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'simounao',
     loadChildren: () => import('./simounao/simounao.module').then( m => m.SimounaoPageModule)
   },
@@ -18,6 +19,18 @@ const routes: Routes = [
     path: 'usuarios',
     loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
   },
+  {
+    path: 'usuarios-github',
+    loadChildren: () => import('./usuarios-github/usuarios-github.module').then( m => m.UsuariosGithubPageModule)
+  },  {
+    path: 'detalhes',
+    loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
+  },
+  {
+    path: 'bitcoin',
+    loadChildren: () => import('./bitcoin/bitcoin.module').then( m => m.BitcoinPageModule)
+  },
+
 
 ];
 
