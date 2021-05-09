@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Usuarios Github</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let userGit of usersGit">
+      <ion-avatar slot="start">
+        <img [src]="userGit.avatar_url" />
+      </ion-avatar>
+      <ion-label>
+        <h1>{{userGit.login}}</h1>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
