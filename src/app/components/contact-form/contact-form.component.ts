@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Contato } from 'src/app/home/home.page';
+import { Contato } from 'src/app/services/contatos.service';
 
 @Component({
   selector: 'app-contact-form',

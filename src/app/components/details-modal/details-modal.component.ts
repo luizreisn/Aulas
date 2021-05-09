@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Contato } from 'src/app/home/home.page';
+import { Contato } from 'src/app/services/contatos.service';
 
 @Component({
   selector: 'app-details-modal',
