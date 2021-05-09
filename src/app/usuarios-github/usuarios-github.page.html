@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let userGit of usersGit">
+    <ion-item *ngFor="let userGit of usersGit" [routerLink]="['/detalhes', userGit.login]">
       <ion-avatar slot="start">
         <img [src]="userGit.avatar_url" />
       </ion-avatar>
