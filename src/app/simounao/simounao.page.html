@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Sim ou Não
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button (click)="getAnswer()" expand="block" >
+    Buscar Resposta
+  </ion-button>
+
+  <div *ngIf="yesno">
+    <h1>{{yesno.answer}}</h1>
+    <img [src]="yesno.image">
+  </div> 
+</ion-content>

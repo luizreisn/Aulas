@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'simounao',
+    loadChildren: () => import('./simounao/simounao.module').then( m => m.SimounaoPageModule)
   },
+
 ];
 
 @NgModule({
