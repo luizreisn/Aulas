@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'simounao',
     loadChildren: () => import('./simounao/simounao.module').then( m => m.SimounaoPageModule)
   },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
 
 ];
 
