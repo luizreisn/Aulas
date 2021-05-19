@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'lancamentos',
+    loadChildren: () => import('./lancamentos/lancamentos.module').then( m => m.LancamentosPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ArtistaBusca } from '../models/ArtistaBusca';
+import { MusicasService } from '../services/musicas.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public termoBusca: '';
+
+  public result: ArtistaBusca = null
+
+  constructor(private musicaService: MusicasService) {}
+
+  public async busca(){
+    this.result = await this.musicaService.buscarArtista(this.termoBusca)
+  }
 
 }
