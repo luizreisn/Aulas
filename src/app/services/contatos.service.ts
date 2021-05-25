@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Contato{
   nome: string;
@@ -11,17 +12,19 @@ export interface Contato{
 })
 export class ContatosService {
 
-  public contatos: Contato[] = [
+  private contatos: Contato[] = [
     //{ nome: 'Luiz Reis', usuario: 'luizreisn'},
     //{ nome: 'Carolina', usuario: 'sushiland'},
     //{ nome: 'Karine', usuario: 'kaf135'},
     //{ nome: 'João Pedro', usuario: 'jpssantiago'},
     //{ nome: 'Beatriz', usuario: 'BeatrizMarcos'},
-   // { nome: 'Luccas', usuario: 'itsLuccas'},
-   // { nome: 'Nícolas', usuario: 'NicolasRMarques'},
+    //{ nome: 'Luccas', usuario: 'itsLuccas'},
+    //{ nome: 'Nícolas', usuario: 'NicolasRMarques'},
     //{ nome:'Leonardo Ap', usuario:'LeonardoAp96'},
     //{ nome: 'Sophia', usuario: 'sophiafmartins'}
-  ]
+  ];
+
+  public contatosStream = new BehaviorSubject<Contato[]>([]);
 
   constructor(private storage: Storage) {
     this.loadFromStorage();
@@ -46,10 +49,12 @@ export class ContatosService {
     const loadedContatos: Contato[] | null = await this.storage.get('contatos')
     if(loadedContatos){
       this.contatos.push(...loadedContatos)
+      this.contatosStream.next([...this.contatos])
     }
   }
 
   private saveAtStorage(){
     this.storage.set('contatos', this.contatos)
+    this.contatosStream.next([...this.contatos])
   }
 }

@@ -1,14 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Contatos
-    </ion-title>
+    <ion-searchbar [(ngModel)]="buscar" (ionChange)="atualizarBusca()" placeholder="Buscar Contato"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor = "let contato of contatos" (click)="abrirModal(contato)">
+    <ion-item *ngFor = "let contato of contatoStream | async" (click)="abrirModal(contato)">
       <ion-avatar slot="start">
         <img [src]="'//github.com/'+contato.usuario+'.png'" />
       </ion-avatar>
